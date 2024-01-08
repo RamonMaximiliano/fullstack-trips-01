@@ -123,14 +123,7 @@ IMPORTANT LINKS:
 
 https://www.notion.so/Felipe-Rocha-Full-Stack-Week-01-e8637ba4492543d0898173f6091db3fa
 
-PRISMA:
-O Prisma é um ORM (Object Relational Mapping), o principal objetivo do ORM é facilitar a interação entre o código da aplicação e os dados armazenados em um banco de dados relacional, eliminando a necessidade de escrever consultas SQL manualmente.
-https://www.prisma.io/docs/getting-started/quickstart
 
-
-SUPABASE:
-Plataforma de desenvolvimento de aplicativos que combina banco de dados, autenticação e armazenamento de arquivos em uma única solução. (Firebase) 
-https://supabase.com/dashboard/project/teeakiwounttjhcvlbgt
 
 
 
