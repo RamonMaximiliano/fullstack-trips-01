@@ -1,26 +1,26 @@
+"use client"
 import React from "react";
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Home',
-}
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Home() {
+  const {data} = useSession();
   return (
-<>Home page</>
+    <>
+
+    <div>
+      <button onClick={()=>{signIn()}}>Login</button><br/>
+      <button onClick={()=>{signOut()}}>Logout</button>
+    </div>
+      <h1>Olá {data?.user?.name}</h1>
+      <img src={data?.user?.image ?? ""} alt=""/>
+    </>
   )
 }
 
-
 /*
 
-Video 1 -  1:33:00
 
 
-
-IMPORTANT LINKS:
-
-https://www.notion.so/Felipe-Rocha-Full-Stack-Week-01-e8637ba4492543d0898173f6091db3fa
 
 
 
