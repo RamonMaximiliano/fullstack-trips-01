@@ -19,9 +19,8 @@ export default function Home() {
 
 /*
 
-
-
-
+Rodar antes de dar o npm run dev
+npx prisma generate
 
 
 
