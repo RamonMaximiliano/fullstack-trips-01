@@ -16,7 +16,6 @@ export default function Header() {
         signOut();
     }
     const handleMenuClick = () => { setMenuIsOpen(!menuIsOpen) }
-
     return (
         <div className="container mx-auto p-5 flex justify-between py-0 h-[93px] items-center ">
             <div className="logo-name h-[32px] w-[182px] items-center">
