@@ -6,13 +6,7 @@ export default function Home() {
   const {data} = useSession();
   return (
     <>
-
-    <div>
-      <button onClick={()=>{signIn()}}>Login</button><br/>
-      <button onClick={()=>{signOut()}}>Logout</button>
-    </div>
-      <h1>Olá {data?.user?.name}</h1>
-      <img src={data?.user?.image ?? ""} alt=""/>
+Hello there
     </>
   )
 }
