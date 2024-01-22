@@ -24,6 +24,8 @@ model Trip {
   highLights   String[]
   maxGuests    Int
   reservations TripReservation[]
+  countryCode  String
+  recommended  Boolean           @default(false)
 }
 
 //Uma reserva só pode ser de uma trip
