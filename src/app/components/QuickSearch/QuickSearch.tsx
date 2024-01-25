@@ -14,7 +14,7 @@ const QuickSearch = () => {
                 <h3 className="text-gray-500 whitespace-nowrap mx-2">Tente pesquisar por</h3>
                 <div className="bg-gray-500 w-full h-[2px]"></div>
             </div>
-            <div className="container flex justify-between flex-wrap mx-1 my-3 text-gray-500">
+            <div className="container flex justify-between flex-wrap mx-1 my-5 text-gray-500">
                 <div className="items-center text-center flex flex-col">
                     <FaHotel />
                     <p className="text-sm">Resorts</p>
