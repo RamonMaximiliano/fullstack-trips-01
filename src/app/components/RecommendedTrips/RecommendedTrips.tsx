@@ -1,10 +1,24 @@
 import React from "react";
 import TripItem from "../TripItem/TripItem";
 import { Trip } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
+
+async function getTrips(){
+  const trips = await prisma.trip.findMany();
+  return trips;
+}
 
 export default async function RecommendedTrips() {
 
-  const tripsdata = await fetch("http://localhost:3000/apicon").then((data) => { return data.json() })
+ /*
+ 
+ const tripsdata = await fetch("http://localhost:3000/apicon").then((data) => { return data.json() }) 
+ com a função acima getTrips, foi desnecessário esta API em função de importar diretamente neste component os dados do banco
+
+ */
+
+const data = await getTrips();
+
 
   return (
     <>
@@ -15,7 +29,7 @@ export default async function RecommendedTrips() {
       </div>
       <div className="w-72 flex justify-between items-center flex-col my-5 m-auto">
       {
-        tripsdata.map((item: Trip) => <TripItem key={item.id} trip={item} />)
+          data.map((item: Trip) => <TripItem key={item.id} trip={item} />)
       }
       </div>
     </>
