@@ -21,7 +21,7 @@ export default function Header() {
         <div className="container mx-auto p-5 flex justify-between py-0 h-[93px] items-center ">
              <Link href={`/`}>
             <div className="logo-name h-[32px] w-[182px] items-center">
-                <GiCommercialAirplane className="logo-name-airplane" />
+                <GiCommercialAirplane style={{ color: '#590BD8' }} className="logo-name-airplane" />
                 <h2 className="text-primary font-semibold">BonVoyage</h2>
             </div>
             </Link>

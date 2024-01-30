@@ -52,7 +52,7 @@ export default async function TripDetails({ params }: { params: { tripid: string
                 <h2 className="font-bold mb-2">Destaques</h2>
                 <div className="flex flex-wrap">
                 {tripDetails?.highLights.map((item) => { 
-                    return <div className="flex items-center w-2/4 my-1"><FaRegCheckCircle style={{ color: 'purple' }} size={12}/><p className="ml-3 text-xs" key={item}>{item}</p></div>
+                    return <div className="flex items-center w-2/4 my-1"><FaRegCheckCircle style={{ color: '#590BD8' }} size={12}/><p className="ml-3 text-xs" key={item}>{item}</p></div>
                     })}
                 </div>
             </div>
