@@ -17,13 +17,12 @@ async function getDetails(tripid: string) {
     }
 }
 
-
 export default async function TripDetails({ params }: { params: { tripid: string } }) {
     const tripDetails = await getDetails(params.tripid);
     return (
         <>
             <div className="text-gray-500">
-                <img src={String(tripDetails?.coverImage)} alt="foto" />
+                <img src={String(tripDetails?.coverImage)} alt="foto" className="mx-auto w-11/12" />
                 <div className="leading-8 mx-auto w-11/12 my-2">
                     <h1 className="font-bold">{tripDetails?.name}</h1>
                     <div className="flex items-center my-0.3"><ReactCountryFlag countryCode={String(tripDetails?.countryCode)} svg /><p className="text-sm ml-2">{tripDetails?.location}</p>
