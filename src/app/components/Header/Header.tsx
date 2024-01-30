@@ -5,6 +5,7 @@ import { GiCommercialAirplane } from "react-icons/gi";
 import { AiOutlineMenu } from "react-icons/ai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
     const { status, data } = useSession();
@@ -18,10 +19,12 @@ export default function Header() {
     const handleMenuClick = () => { setMenuIsOpen(!menuIsOpen) }
     return (
         <div className="container mx-auto p-5 flex justify-between py-0 h-[93px] items-center ">
+             <Link href={`/`}>
             <div className="logo-name h-[32px] w-[182px] items-center">
                 <GiCommercialAirplane className="logo-name-airplane" />
                 <h2 className="text-primary font-semibold">BonVoyage</h2>
             </div>
+            </Link>
 
             {status === "unauthenticated" && (
                 <button className="text-primary text-sm font-semibold" onClick={handleLoginClick}>Login</button>

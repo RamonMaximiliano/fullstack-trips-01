@@ -4,8 +4,12 @@ import { Trip } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 
 async function getTrips(){
-  const trips = await prisma.trip.findMany();
-  return trips;
+  const trips = await prisma.trip.findMany().finally(() => {
+    prisma.$disconnect();
+  });
+  if (trips) {
+    return trips;
+}
 }
 
 export default async function RecommendedTrips() {
