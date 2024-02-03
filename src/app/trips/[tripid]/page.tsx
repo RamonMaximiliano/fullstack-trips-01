@@ -2,7 +2,9 @@ import React from "react";
 import { prisma } from "@/lib/prisma";
 import ReactCountryFlag from "react-country-flag";
 import { FaRegCheckCircle } from "react-icons/fa";
+import TripReservation from "@/app/components/TripReservation/TripReservation";
 
+/*A getDetailsesta fazendo uma consulta no banco de dados sobre este item do ID*/
 async function getDetails(tripid: string) {
     const tripsDetail = await prisma.trip.findUnique({
         where: {
@@ -16,7 +18,15 @@ async function getDetails(tripid: string) {
     }
 }
 
+/* 
+Este componente em função de como sua pasta foi criado e dos params da function do Component, o que for passado na URL vira os params,
+é possivel visualuzar isso adicionando esta tag abaixo no component: <p>{params.tripid}</p>, ela vai retornar o que estiver na URL depois do /trips/
+Não é possivel dar um console.log para visualizar este id pois este é um server component
+*/
+
 export default async function TripDetails({ params }: { params: { tripid: string } }) {
+
+    /*O ID da trip foi passado para a getDetails puxando da URL para que ela possa fazer a consulta da devida trip no banco*/
     const tripDetails = await getDetails(params.tripid);
     const startdate = new Date(String(tripDetails?.startDate));
     const enddate = new Date(String(tripDetails?.endDate));
@@ -24,6 +34,12 @@ export default async function TripDetails({ params }: { params: { tripid: string
     let exactStartDate: string = " "
     let exactEndDate: string = " "
     let exactEndMonth: string = " "
+
+    // Check if tripDetails is undefined
+    if (!tripDetails) {
+        // Handle the case where tripDetails is undefined
+        return <div>No trip details found.</div>;
+    }
 
     /*START DATE*/
     if (startdate.getMonth() + 1 < 10) {
@@ -65,23 +81,7 @@ export default async function TripDetails({ params }: { params: { tripid: string
                     <p className="text-sm leading-6"><span className="text-primary font-bold">R${Number(tripDetails?.pricePerDay)}</span> por dia</p>
                 </div>
             </div>
-            <p>{entirestartdate}</p>
-            <p>{entireenddate}</p>
-
-            <div className="leading-7 mx-auto w-11/12 my-2">
-                <div className="flex my-2">
-                    <input className="p-2 rounded-lg w-2/4 mr-1 border-2 border-gray-300" placeholder="Data de inicio" type="date" min={entirestartdate} max={entireenddate}></input>
-                    <input className="p-2 rounded-lg w-2/4 ml-1 border-2 border-gray-300" placeholder="Data final" type="date" min={entirestartdate} max={entireenddate}></input>
-                </div>
-                <input placeholder="Numero de hospedes (max: 5)" className="p-2 rounded-lg w-full border-2 border-gray-300 mt-1" type="number" min="1" max="5"></input>
-                <div className="flex font-bold w-full justify-between text-gray-500 my-2 mt-3">
-                    <p>Total:</p>
-                    <p>R$ </p>
-                </div>
-                <button className="w-full rounded-lg p-2 text-white bg-primary border-none mb-5">Reservar agora</button>
-                <div className="bg-gray-400 w-full h-[2px] my-2"></div>
-            </div>
-
+            <TripReservation trip={tripDetails} startDate={entirestartdate} endDate={entireenddate} />
             <div className="leading-7 mx-auto w-11/12 my-6 text-gray-500">
                 <h2 className="font-bold mb-2">Sobre a viagem:</h2>
                 <p className="text-xs">{tripDetails?.description}</p>
