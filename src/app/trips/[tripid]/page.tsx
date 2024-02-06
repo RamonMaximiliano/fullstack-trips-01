@@ -67,7 +67,7 @@ export default async function TripDetails({ params }: { params: { tripid: string
     }
     /*END DATE*/
 
-    const entirestartdate = `${startdate.getFullYear()}-${exactStartMonth}-${exactStartDate}`
+    const entirestartdate = `${startdate.getFullYear()}-${exactStartMonth}-${exactStartMonth}`
     const entireenddate = `${enddate.getFullYear()}-${exactEndMonth}-${exactEndDate}`
 
     return (

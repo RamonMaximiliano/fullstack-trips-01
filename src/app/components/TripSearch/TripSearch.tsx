@@ -21,15 +21,3 @@ const TripSearch = () => {
 
 export default TripSearch
 
-
-
-/*
-
-- Find React calendar library (date picker)
-- Find React currency library
-
-
-
-
-
-*/
