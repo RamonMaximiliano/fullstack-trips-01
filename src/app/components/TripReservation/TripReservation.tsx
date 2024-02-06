@@ -13,16 +13,25 @@ type TripReservationForm = {
 export default function TripReservation(props: TripItemsProps & { startDate: string, endDate: string }): React.JSX.Element {
     const { register, handleSubmit, formState: { errors } } = useForm<TripReservationForm>();
     const [tripTotal, setTripTotal] = useState(0);
+    const [inicFin, setInicFin] = useState(false);
     const { trip, startDate, endDate } = props;
+
     const onSubmit = (data: any) => {
         console.log({ data });
+        if(data.startdate> data.enddate){
+            setInicFin(true)
+        } else {
+            setInicFin(false)
+        }
     }
+
     return (
         <div className="leading-7 mx-auto w-11/12 my-2">
             <div className="flex my-2">
                 <div className="w-2/4 mr-1">
                     <p className="text-sm text-gray-500">Data inicial:</p>
-                    <input {...register("startdate", {
+                    <input 
+                    {...register("startdate", {
                             required: {
                                 value: true,
                                 message: "Data inicial obrigatória",
@@ -43,6 +52,7 @@ export default function TripReservation(props: TripItemsProps & { startDate: str
                     {errors.enddate && <p className="text-red-500 text-sm">{errors?.enddate?.message}</p>}
                 </div>
             </div>
+            {inicFin && <p className="text-red-500 text-sm">Data final precisa ser maior que data inicial!</p>}
             <input
                 {...register("guests", {required: {
                         value: true,
@@ -61,12 +71,3 @@ export default function TripReservation(props: TripItemsProps & { startDate: str
     )
 }
 
-
-
-/*
-
-O input dele esta aparecendo o erro porque ele fez um input separado, verificar no react hook form como mostrar coisa similar
-
-
-
-*/
