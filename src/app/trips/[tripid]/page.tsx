@@ -1,3 +1,4 @@
+/*Server component*/
 import React from "react";
 import { prisma } from "@/lib/prisma";
 import ReactCountryFlag from "react-country-flag";

@@ -3,6 +3,9 @@ import { Trip } from "@prisma/client";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { differenceInDays } from "date-fns";
+import { useRouter  } from 'next/navigation'
+
+/*o useRouter é similar ao useNavigate, para server component tem que ser o "redirect" */
 export type TripItemsProps = {
     trip: Trip;
 }
@@ -14,6 +17,7 @@ type TripReservationForm = {
 export default function TripReservation(props: TripItemsProps & { startDate: string, endDate: string }): React.JSX.Element {
     const { register, handleSubmit, formState: { errors } } = useForm<TripReservationForm>();
     const [tripTotalGuests, setTripTotalGuests] = useState(0);
+    const router = useRouter()
     const [inicFin, setInicFin] = useState(false);
     const [initialDate, setInitialDate] = useState(0);
     const [finalDate, setFinalDate] = useState(0);
@@ -21,13 +25,14 @@ export default function TripReservation(props: TripItemsProps & { startDate: str
     const { trip, startDate, endDate } = props;
 
     const onSubmit = (data: any) => {
-        console.log({ data });
-        console.log(maxTotal);
         if (data.startdate > data.enddate) {
             setInicFin(true)
         } else {
             setInicFin(false)
         }
+        const tripData:string = `${String(maxTotal)}p${String(data.startdate)}p${String(data.enddate)}p${String(data.guests)}p${String(props.trip.id)}`
+        console.log(tripData)
+        router.push(`/FinishP/${tripData}`)
     }
     const startDateString = initialDate;
     const startDateObject = new Date(startDateString);

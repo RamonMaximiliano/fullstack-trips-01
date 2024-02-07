@@ -1,3 +1,4 @@
+/*Server component*/
 import React from "react";
 import TripItem from "../TripItem/TripItem";
 import { Trip } from "@prisma/client";
