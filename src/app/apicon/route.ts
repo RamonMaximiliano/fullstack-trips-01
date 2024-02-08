@@ -9,6 +9,7 @@ export async function GET(){
 
 /*
 
-Neste arquivo somente foi criada a URL da API
+Neste arquivo somente foi criada a URL da API para a table Trip somente
+http://localhost:3000/apicon
 
 */
