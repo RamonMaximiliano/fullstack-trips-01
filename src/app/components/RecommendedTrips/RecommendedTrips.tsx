@@ -3,6 +3,7 @@ import React from "react";
 import TripItem from "../TripItem/TripItem";
 import { Trip } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
+import { AnyRecord } from "dns";
 
 async function getTrips(){
   const trips = await prisma.trip.findMany().finally(() => {
@@ -22,7 +23,7 @@ export default async function RecommendedTrips() {
 
  */
 
-const data = await getTrips();
+const data:any = await getTrips();
 
 
   return (

@@ -1,7 +1,5 @@
 "use client"
 import React from "react";
-import { getSession } from "next-auth/react";
-
 type purchasedTrip = {
     id: string,
     price: number,

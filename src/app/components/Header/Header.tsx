@@ -35,9 +35,16 @@ export default function Header() {
                     <Image width={35} height={35} src={data.user.image!} alt={data.user.name!} className="rounded-full shadow-md" />
                 
                     {menuIsOpen && (
+                        <>
+                        <Link href={`/MinhasViagens`}>
                         <div className="absolute top-14 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center">
+                            <button className="text-primary text-sm font-semibold" onClick={handleLoginOut}>Minhas viagens</button>
+                        </div>
+                        </Link>
+                        <div className="absolute top-28 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center">
                             <button className="text-primary text-sm font-semibold" onClick={handleLoginOut}>Logout</button>
                         </div>
+                        </>
                     )}
                 </div>
             )}
