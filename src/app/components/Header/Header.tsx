@@ -33,7 +33,7 @@ export default function Header() {
                 <div className="flex items-center gap-3 border-grayPrimary border border-solid rounded-full p-2 px-3 cursor-pointer relative">
                     <AiOutlineMenu size={16} onClick={handleMenuClick} />
                     <Image width={35} height={35} src={data.user.image!} alt={data.user.name!} className="rounded-full shadow-md" />
-
+                
                     {menuIsOpen && (
                         <div className="absolute top-14 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center">
                             <button className="text-primary text-sm font-semibold" onClick={handleLoginOut}>Logout</button>

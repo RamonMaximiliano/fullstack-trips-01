@@ -8,12 +8,12 @@ export async function GET(){
 
 export async function POST(request: Request){
     const req:any = await request.json();
-    const { startDate, endDate, userId, tripId, totalPaid  } = req;
+    const { start, end, userId, tripId, totalPaid  } = req;
 
     await prisma.tripReservation.create({
         data: {
-          startDate,
-          endDate,
+          start,
+          end,
           userId,
           tripId,
           totalPaid,

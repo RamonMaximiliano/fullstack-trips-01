@@ -27,17 +27,27 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   )
 }
 
-
 /*
 
 https://github.com/felipemotarocha/fullstackweek-trips
 https://www.linkedin.com/posts/pedroh-dev_bom-dia-galera-passando-para-compartilhar-activity-7084494958925144064-m5EG/?trk=public_profile_like_view
 
-- Finalizar reserva e adicionar reserva no banco
-- Adicionar no menu item pra "ver minhas viagens"
-- Opção de cancelar viagem quando estiver vendo "ver minhas viagens"
 - Adicionar funcionalidade de pesquisas da pagina inicial
 
+-----------------------------------------------------------------------------
+
+
+PAGINA MINHAS VIAGENS:
+- Adicionar no menu item pra "ver minhas viagens"
+- Opção de deletar viagem do banco quando estiver vendo "ver minhas viagens"
+
+
+import { getSession } from "next-auth/react";
+
+  async function myFunction() {
+    const session = await getSession()
+    console.log(session)
+  }
 
 
 
