@@ -16,7 +16,7 @@ export default function Header() {
         setMenuIsOpen(false);
         signOut();
     }
-    const test:string = "test"
+    const userData:string = String(data?.user?.name)
     
 
     const handleMenuClick = () => { setMenuIsOpen(!menuIsOpen) }
@@ -39,7 +39,7 @@ export default function Header() {
                 
                     {menuIsOpen && (
                         <>
-                        <Link href={`/MinhasViagens/${test}`}>
+                        <Link href={`/MinhasViagens/${userData}`}>
                         <div className="absolute top-14 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center">
                             <button className="text-primary text-sm font-semibold">Minhas viagens</button>
                         </div>
