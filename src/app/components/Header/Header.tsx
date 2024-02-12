@@ -16,6 +16,9 @@ export default function Header() {
         setMenuIsOpen(false);
         signOut();
     }
+    const test:string = "test"
+    
+
     const handleMenuClick = () => { setMenuIsOpen(!menuIsOpen) }
     return (
         <div className="container mx-auto p-5 flex justify-between py-0 h-[93px] items-center shadow-md">
@@ -36,9 +39,9 @@ export default function Header() {
                 
                     {menuIsOpen && (
                         <>
-                        <Link href={`/MinhasViagens`}>
+                        <Link href={`/MinhasViagens/${test}`}>
                         <div className="absolute top-14 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center">
-                            <button className="text-primary text-sm font-semibold" onClick={handleLoginOut}>Minhas viagens</button>
+                            <button className="text-primary text-sm font-semibold">Minhas viagens</button>
                         </div>
                         </Link>
                         <div className="absolute top-28 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center">
