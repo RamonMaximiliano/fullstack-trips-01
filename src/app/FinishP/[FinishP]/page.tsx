@@ -69,7 +69,6 @@ export default async function FinishPurchase({ params }: { params: { FinishP: st
             <p>{purchasedTrip.guests} hóspedes</p>
           </div>
         </div>
-        <button className="bg-primary w-[100%] p-2 my-10 rounded-xl text-white font-semibold hover:bg-primaryHover mb-40">Finalizar compra</button>
         <ReservarButton   id={purchasedTrip.id} price={purchasedTrip.price} startdate={purchasedTrip.startdate} enddate={purchasedTrip.enddate}/>
       </div>
     </>

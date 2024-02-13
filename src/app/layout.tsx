@@ -36,19 +36,11 @@ https://www.linkedin.com/posts/pedroh-dev_bom-dia-galera-passando-para-compartil
 
 -----------------------------------------------------------------------------
 
-
 PAGINA MINHAS VIAGENS:
-- Adicionar no menu item pra "ver minhas viagens"
+
 - Opção de deletar viagem do banco quando estiver vendo "ver minhas viagens"
-
-
-import { getSession } from "next-auth/react";
-
-  async function myFunction() {
-    const session = await getSession()
-    console.log(session)
-  }
-
+- Na hora de fazer a reserva passar o ID do user que esta logado no momento
+- Mudar a tabela de reserva no banco e passar dados de nome e foto do local de hospedagem
 
 
 */
