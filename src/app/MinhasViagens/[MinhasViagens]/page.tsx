@@ -42,6 +42,16 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
                     <p>{item.start} - {item.end}</p>
                     <p>Preço total:</p>
                     {Number(item.totalPaid)}          
+                    <p>Data:</p>
+                    <p>{item.start} - {item.end}</p>
+                    <p>Pictute:</p>
+                    {item.picture}          
+                    <p>Name:</p>
+                    <p>{item.hotel}</p>
+                    <p>Flag:</p>
+                    {item.country}          
+                    <p>Location:</p>
+                    {item.location}          
                 </div>)
             }
         </div>

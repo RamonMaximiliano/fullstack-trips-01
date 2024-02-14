@@ -36,11 +36,11 @@ https://www.linkedin.com/posts/pedroh-dev_bom-dia-galera-passando-para-compartil
 
 -----------------------------------------------------------------------------
 
-PAGINA MINHAS VIAGENS:
+Start PAGINA MINHAS VIAGENS:
 
+- fazer toda a interface de display de minhas viagens
 - Opção de deletar viagem do banco quando estiver vendo "ver minhas viagens"
-- Na hora de fazer a reserva passar o ID do user que esta logado no momento
-- Mudar a tabela de reserva no banco e passar dados de nome e foto do local de hospedagem
+
 
 
 */

@@ -69,7 +69,9 @@ export default async function FinishPurchase({ params }: { params: { FinishP: st
             <p>{purchasedTrip.guests} hóspedes</p>
           </div>
         </div>
-        <ReservarButton   id={purchasedTrip.id} price={purchasedTrip.price} startdate={purchasedTrip.startdate} enddate={purchasedTrip.enddate}/>
+        <ReservarButton   id={purchasedTrip.id} price={purchasedTrip.price} startdate={purchasedTrip.startdate} enddate={purchasedTrip.enddate} guests={purchasedTrip.guests} 
+        picture={String(tripDataTaken?.imagesUrl)} hotel={String(tripDataTaken?.name)} country={String(tripDataTaken?.countryCode)} location={String(tripDataTaken?.location)}
+        />
       </div>
     </>
   )
