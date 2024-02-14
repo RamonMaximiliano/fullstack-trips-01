@@ -2,6 +2,7 @@
 import React from "react";
 import { prisma } from "@/lib/prisma";
 import { User, TripReservation } from "@prisma/client";
+import ReactCountryFlag from "react-country-flag";
 
 async function getUsers() {
     const users = await prisma.user.findMany().finally(() => {
@@ -24,35 +25,51 @@ async function getReservation() {
 export default async function MinhasViagens({ params }: { params: { MinhasViagens: string } }) {
     const users: any = await getUsers();
     const trips: any = await getReservation();
-    const userEnd = params.MinhasViagens.replace("%20"," ")
-    const userID = users.find((item:User)=>{
+    const userEnd = params.MinhasViagens.replace("%20", " ")
+    const userID = users.find((item: User) => {
         return item.name == userEnd
     })
-    const MyTrips = trips.filter((item:TripReservation)=>{
+    const MyTrips = trips.filter((item: TripReservation) => {
         return item.userId == userID.id
     })
     return (
-        <div className="bg-gray-400">
-            <h1>Minhas viagens</h1>
-            
+        <div className="container mx-auto p-2">
+            <h1 className="font-bold my-4">Minhas viagens</h1>
             {
-                MyTrips.map((item: TripReservation) => 
-                <div>
-                    <p>Data:</p>
-                    <p>{item.start} - {item.end}</p>
-                    <p>Preço total:</p>
-                    {Number(item.totalPaid)}          
-                    <p>Data:</p>
-                    <p>{item.start} - {item.end}</p>
-                    <p>Pictute:</p>
-                    {item.picture}          
-                    <p>Name:</p>
-                    <p>{item.hotel}</p>
-                    <p>Flag:</p>
-                    {item.country}          
-                    <p>Location:</p>
-                    {item.location}          
-                </div>)
+                MyTrips.map((item: TripReservation) =>
+                    <div className="my-4 shadow-xl p-4 rounded-xl bg-gray-100">
+                        <div className="flex w-full items-center">
+                            <img src={item.picture} alt="Hotel picture" className="w-[110px] h-[110px] object-cover rounded-lg"></img>
+                            <div className="ml-4">
+                                <h2 className="font-bold">{item.hotel}</h2>
+                                <p className="text-sm">
+                                    <ReactCountryFlag countryCode={String(item.country)} svg />
+                                    <span className="ml-2">{item.location}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div className="bg-gray-500 w-full h-[1px] my-6"></div>
+                        <div className=" flex flex-col justify-between h-[110px]">
+                            <div>
+                                <p>Data:</p>
+                                <p className="text-sm">{item.start} - {item.end}</p>
+                            </div>
+                            <div>
+                                <p>Hóspedes:</p>
+                                <p className="text-sm">{item.guests} hóspedes</p>
+                            </div>
+                        </div>
+                        <div className="bg-gray-500 w-full h-[1px] my-6"></div>
+                        <div>
+                            <h1 className="font-bold mb-4 items-center text-sm">Informações sobre o preço</h1>
+                            <div className="flex justify-between">
+                                <p className="text-sm">Total:</p>
+                                <p className="font-bold text-sm">R$ {Number(item.totalPaid)}</p>
+                            </div>
+                            <button className="w-full rounded-lg p-2 text-red-600 bg-white border-red-600 border-2 my-4">Cancelar</button>
+                        </div>
+                    </div>
+                    )
             }
         </div>
     );
