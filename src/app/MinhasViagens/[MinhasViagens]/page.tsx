@@ -3,6 +3,7 @@ import React from "react";
 import { prisma } from "@/lib/prisma";
 import { User, TripReservation } from "@prisma/client";
 import ReactCountryFlag from "react-country-flag";
+import ReservarButtonDelete from "@/app/components/ReservationButtonDelete/ReservationButtonDelete";
 
 async function getUsers() {
     const users = await prisma.user.findMany().finally(() => {
@@ -66,7 +67,7 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
                                 <p className="text-sm">Total:</p>
                                 <p className="font-bold text-sm">R$ {Number(item.totalPaid)}</p>
                             </div>
-                            <button className="w-full rounded-lg p-2 text-red-600 bg-white border-red-600 border-2 my-4">Cancelar</button>
+                            <ReservarButtonDelete   id={item.id}/>
                         </div>
                     </div>
                     )

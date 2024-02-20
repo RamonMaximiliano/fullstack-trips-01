@@ -6,6 +6,23 @@ export async function GET(){
     return new NextResponse(JSON.stringify(reservs), {status:200});
 }
 
+export async function DELETE(request: Request){
+  const req:any = await request.json();
+  const { id } = req;
+
+await prisma.tripReservation.delete({
+      where: {
+        id: id,
+      },
+    })
+    return new NextResponse(
+      JSON.stringify({
+        success: true,
+      }),
+      { status: 201 }
+    );
+}
+
 export async function POST(request: Request){
     const req:any = await request.json();
     const { start, end, userId, tripId, totalPaid, guests, picture, hotel, country, location } = req;
@@ -40,9 +57,5 @@ Neste arquivo somente foi criada a URL da API para a table TripReservation somen
 http://localhost:3000/apitripreser
 
 Da para coletar dados e inserir com esta API
-
-Adicionar o Guests nas trips 
-
-https://github.com/felipemotarocha/fullstackweek-trips/blob/main/src/app/api/trips/reservation/route.ts
 
 */

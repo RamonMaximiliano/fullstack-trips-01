@@ -36,10 +36,14 @@ https://www.linkedin.com/posts/pedroh-dev_bom-dia-galera-passando-para-compartil
 
 -----------------------------------------------------------------------------
 
-Start PAGINA MINHAS VIAGENS:
-
-- fazer toda a interface de display de minhas viagens
+PAGINA MINHAS VIAGENS:
 - Opção de deletar viagem do banco quando estiver vendo "ver minhas viagens"
+
+
+MENSAGEM COMPRA SUCCESSFULL:
+
+
+SEARCH NA PAGINA INICIAL:
 
 
 
