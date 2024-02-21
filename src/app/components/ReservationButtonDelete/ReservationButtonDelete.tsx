@@ -4,15 +4,9 @@ type reservedTrip = {
     id: string,
 }
 export default function ReservarButtonDelete(props:reservedTrip) {
-    console.log(props)
     async function deleteReservation(){
-        const response = await fetch("http://localhost:3000/apitripreser/${props.id}",{
+        await fetch(`http://localhost:3000/apitripreser/${props.id}`,{
             method:"DELETE",
-            body: Buffer.from(
-                JSON.stringify({
-                    id: props.id,
-                })
-            ),
        });
     }
     return (
@@ -21,3 +15,15 @@ export default function ReservarButtonDelete(props:reservedTrip) {
         </>
     )
 }
+
+
+/* 
+https://github.com/felipemotarocha/fullstackweek-trips/blob/main/src/app/my-trips/components/UserReservationItem.tsx 
+
+  const handleDeleteClick = async () => {
+    const res = await fetch(`/api/trips/reservation/${reservation.id}`, {
+      method: "DELETE",
+    });
+
+
+*/

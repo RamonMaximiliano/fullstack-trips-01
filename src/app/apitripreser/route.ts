@@ -6,23 +6,6 @@ export async function GET(){
     return new NextResponse(JSON.stringify(reservs), {status:200});
 }
 
-export async function DELETE(request: Request){
-  const req:any = await request.json();
-  const { id } = req;
-
-await prisma.tripReservation.delete({
-      where: {
-        id: id,
-      },
-    })
-    return new NextResponse(
-      JSON.stringify({
-        success: true,
-      }),
-      { status: 201 }
-    );
-}
-
 export async function POST(request: Request){
     const req:any = await request.json();
     const { start, end, userId, tripId, totalPaid, guests, picture, hotel, country, location } = req;
@@ -40,6 +23,7 @@ export async function POST(request: Request){
           country,
           location
         },
+       
       });
 
       return new NextResponse(

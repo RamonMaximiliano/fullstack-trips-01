@@ -1,5 +1,7 @@
 "use client"
 import React from "react";
+import Link from "next/link";
+
 type purchasedTrip = {
     id: string,
     price: number,
@@ -34,8 +36,9 @@ export default function ReservarButton(props:purchasedTrip) {
        });
     }
     return (
-        <>
+        <><Link href={`/`}>
             <button className="bg-primary w-[100%] p-2 my-10 rounded-xl text-white font-semibold hover:bg-primaryHover mb-40" onClick={logReservation}>Finalizar compra</button>
+            </Link>
         </>
     )
 }

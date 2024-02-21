@@ -11,9 +11,7 @@ async function getDetails(tripid: string) {
         where: {
             id: tripid,
         },
-    }).finally(() => {
-        prisma.$disconnect();
-    });
+    })
     if (tripsDetail) {
         return tripsDetail;
     }
@@ -72,9 +70,27 @@ export default async function TripDetails({ params }: { params: { tripid: string
     const entireenddate = `${enddate.getFullYear()}-${exactEndMonth}-${exactEndDate}`
 
     return (
-        <>
+        <div className="lg:w-3/4 lg:px-8 mx-auto">
             <div className="text-gray-500">
-                <img src={String(tripDetails?.coverImage)} alt="foto" className="mx-auto w-11/12" />
+                <img src={String(tripDetails?.coverImage)} alt="foto" className="mx-auto w-11/12 lg:hidden" />
+
+                <div className="hidden lg:grid grid-cols-[2fr,1fr,1fr] gap-2 grid-rows-2 lg:order-2 w-11/12 mx-auto">
+                    <div className="relative row-span-2">
+                        <img src={String(tripDetails?.coverImage)} alt="foto" className="object-cover h-full rounded-tl-lg rounded-bl-lg" />
+                    </div>
+                    <div className="relative w-full">
+                        <img src={String(tripDetails?.imagesUrl[1])} alt="foto" className="object-cover h-full"  />
+                    </div>
+                    <div className="relative w-full">
+                        <img src={String(tripDetails?.imagesUrl[2])} alt="foto" className="object-cover h-full rounded-tr-lg" />
+                    </div>
+                    <div className="relative w-full">
+                        <img src={String(tripDetails?.imagesUrl[0])} alt="foto" className="object-cover h-full" />
+                    </div>
+                    <div className="relative w-full">
+                        <img src={String(tripDetails?.coverImage)} alt="foto" className="object-cover h-full rounded-br-lg" />
+                    </div>
+                </div>
                 <div className="leading-8 mx-auto w-11/12 my-2">
                     <h1 className="font-bold">{tripDetails?.name}</h1>
                     <div className="flex items-center my-0.3"><ReactCountryFlag countryCode={String(tripDetails?.countryCode)} svg /><p className="text-sm ml-2">{tripDetails?.location}</p>
@@ -100,7 +116,7 @@ export default async function TripDetails({ params }: { params: { tripid: string
                 <p className="text-sm ml-2">{tripDetails?.location}</p>
                 <button className="w-full rounded-lg p-2 text-primary bg-white border-primary border-2 my-4">Ver no Google Maps</button>
             </div>
-        </>
+        </div>
     )
 };
 

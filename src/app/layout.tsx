@@ -39,11 +39,11 @@ https://www.linkedin.com/posts/pedroh-dev_bom-dia-galera-passando-para-compartil
 PAGINA MINHAS VIAGENS:
 - Opção de deletar viagem do banco quando estiver vendo "ver minhas viagens"
 
+RESPONSIVE 
 
 MENSAGEM COMPRA SUCCESSFULL:
 
-
-SEARCH NA PAGINA INICIAL:
+Deletar: SEARCH NA PAGINA INICIAL:
 
 
 
