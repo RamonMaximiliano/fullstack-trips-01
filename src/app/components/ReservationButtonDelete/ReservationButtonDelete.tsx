@@ -4,10 +4,11 @@ type reservedTrip = {
     id: string,
 }
 export default function ReservarButtonDelete(props:reservedTrip) {
-    async function deleteReservation(){
-        await fetch(`http://localhost:3000/apitripreser/${props.id}`,{
+    console.log(props)
+        async function deleteReservation(){
+        const res = await fetch(`http://localhost:3000/apitripreser?id=${props.id}`,{
             method:"DELETE",
-       });
+       });   
     }
     return (
         <>

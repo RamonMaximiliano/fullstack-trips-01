@@ -17,6 +17,10 @@ export default function Header() {
         signOut();
     }
     const userData:string = String(data?.user?.name)
+
+    function hideMenu(){
+        setMenuIsOpen(false)
+    }
     
 
     const handleMenuClick = () => { setMenuIsOpen(!menuIsOpen) }
@@ -33,18 +37,18 @@ export default function Header() {
                 <button className="text-primary text-sm font-semibold" onClick={handleLoginClick}>Login</button>
             )}
             {status === "authenticated" && data.user && (
-                <div className="flex items-center gap-3 border-grayPrimary border border-solid rounded-full p-2 px-3 cursor-pointer relative">
+                <div className="flex items-center gap-3 border-grayPrimary border border-solid rounded-full p-2 px-3 cursor-pointer relative w-[100px]">
                     <AiOutlineMenu size={16} onClick={handleMenuClick} />
                     <Image width={35} height={35} src={data.user.image!} alt={data.user.name!} className="rounded-full shadow-md" />
                 
                     {menuIsOpen && (
                         <>
-                        <Link href={`/MinhasViagens/${userData}`}>
-                        <div className="absolute top-14 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center">
+                        <Link href={`/MinhasViagens/${userData}`} onClick={()=>hideMenu()}>
+                        <div className="absolute top-14 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center z-10">
                             <button className="text-primary text-sm font-semibold">Minhas viagens</button>
                         </div>
                         </Link>
-                        <div className="absolute top-28 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center">
+                        <div className="absolute top-28 left-0 w-full h-full bg-white rounded-full shadow-md flex flex-col justify-center items-center z-10" onClick={()=>hideMenu()}>
                             <button className="text-primary text-sm font-semibold" onClick={handleLoginOut}>Logout</button>
                         </div>
                         </>

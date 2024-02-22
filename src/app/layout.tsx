@@ -35,7 +35,7 @@ https://www.linkedin.com/posts/pedroh-dev_bom-dia-galera-passando-para-compartil
 
 
 -----------------------------------------------------------------------------
-
+https://www.mozzlog.com/blog/delete-request-api-route-nextjs
 
 PAGINA MINHAS VIAGENS:
 - Opção de deletar viagem do banco quando estiver vendo "ver minhas viagens"
@@ -46,7 +46,7 @@ DELETAR: SEARCH NA PAGINA INICIAL:
 
 COLOCAR O QUICK SEARCH DENTRO DO RECOMMENDED TRIPS E FILTRAR CONFORME OS BOTÕES
 
-DROP DOWN MENU POR BAIXO DE ELEMENTOS (BUG)
+
 
 
 */
