@@ -11,7 +11,7 @@ export default function ReservarButtonDelete(props:reservedTrip) {
     }
     return (
         <>
-           <button className="w-full rounded-lg p-2 text-red-600 bg-white border-red-600 border-2 my-4" onClick={deleteReservation}>Cancelar</button>
+           <button className="duration-200 w-full rounded-lg p-2 text-red-600 bg-white border-red-600 border-2 my-4 hover:bg-red-500 hover:text-white" onClick={deleteReservation}>Cancelar</button>
         </>
     )
 }

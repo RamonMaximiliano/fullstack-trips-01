@@ -32,19 +32,21 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
 https://github.com/felipemotarocha/fullstackweek-trips
 https://www.linkedin.com/posts/pedroh-dev_bom-dia-galera-passando-para-compartilhar-activity-7084494958925144064-m5EG/?trk=public_profile_like_view
 
-- Adicionar funcionalidade de pesquisas da pagina inicial
+
 
 -----------------------------------------------------------------------------
+
 
 PAGINA MINHAS VIAGENS:
 - Opção de deletar viagem do banco quando estiver vendo "ver minhas viagens"
 
-RESPONSIVE 
-
 MENSAGEM COMPRA SUCCESSFULL:
 
-Deletar: SEARCH NA PAGINA INICIAL:
+DELETAR: SEARCH NA PAGINA INICIAL:
 
+COLOCAR O QUICK SEARCH DENTRO DO RECOMMENDED TRIPS E FILTRAR CONFORME OS BOTÕES
+
+DROP DOWN MENU POR BAIXO DE ELEMENTOS (BUG)
 
 
 */

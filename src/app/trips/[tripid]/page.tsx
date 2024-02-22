@@ -75,20 +75,20 @@ export default async function TripDetails({ params }: { params: { tripid: string
                 <img src={String(tripDetails?.coverImage)} alt="foto" className="mx-auto w-11/12 lg:hidden" />
 
                 <div className="hidden lg:grid grid-cols-[2fr,1fr,1fr] gap-2 grid-rows-2 lg:order-2 w-11/12 mx-auto">
-                    <div className="relative row-span-2">
-                        <img src={String(tripDetails?.coverImage)} alt="foto" className="object-cover h-full rounded-tl-lg rounded-bl-lg" />
+                    <div className="relative row-span-2 shadow-2xl">
+                        <img src={String(tripDetails?.coverImage)} alt="foto" className="object-cover h-full rounded-tl-lg rounded-bl-lg shadow-xl"/>
                     </div>
-                    <div className="relative w-full">
-                        <img src={String(tripDetails?.imagesUrl[1])} alt="foto" className="object-cover h-full"  />
+                    <div className="relative w-full shadow-2xl">
+                        <img src={String(tripDetails?.imagesUrl[1])} alt="foto" className="object-cover h-full shadow-2xl" />
                     </div>
-                    <div className="relative w-full">
-                        <img src={String(tripDetails?.imagesUrl[2])} alt="foto" className="object-cover h-full rounded-tr-lg" />
+                    <div className="relative w-full shadow-2xl">
+                        <img src={String(tripDetails?.imagesUrl[2])} alt="foto" className="object-cover h-full rounded-tr-lg shadow-2xl" />
                     </div>
-                    <div className="relative w-full">
-                        <img src={String(tripDetails?.imagesUrl[0])} alt="foto" className="object-cover h-full" />
+                    <div className="relative w-full shadow-2xl">
+                        <img src={String(tripDetails?.imagesUrl[0])} alt="foto" className="object-cover h-full shadow-2xl" />
                     </div>
-                    <div className="relative w-full">
-                        <img src={String(tripDetails?.coverImage)} alt="foto" className="object-cover h-full rounded-br-lg" />
+                    <div className="relative w-full shadow-2xl">
+                        <img src={String(tripDetails?.coverImage)} alt="foto" className="object-cover h-full rounded-br-lg shadow-2xl" />
                     </div>
                 </div>
                 <div className="leading-8 mx-auto w-11/12 my-2">

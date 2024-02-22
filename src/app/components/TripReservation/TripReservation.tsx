@@ -90,8 +90,9 @@ export default function TripReservation(props: TripItemsProps & { startDate: str
                 <p>Total:</p>
                 <p>R$ {maxTotal}</p>
             </div>
-            <button className="w-full rounded-lg p-2 text-white bg-primary border-none mb-5" onClick={() => handleSubmit(onSubmit)()}>Reservar agora</button>
+            <button className="w-full rounded-lg p-2 text-white border-2 hover:border-2 bg-primary mb-5 hover:bg-white hover:text-primary duration-200 hover:border-purple-600" onClick={() => handleSubmit(onSubmit)()}>Reservar agora</button>
             <div className="bg-gray-400 w-full h-[2px] my-2"></div>
         </div>
     )
 }
+

@@ -34,11 +34,13 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
         return item.userId == userID.id
     })
     return (
-        <div className="container mx-auto p-2">
-            <h1 className="font-bold my-4">Minhas viagens</h1>
+        
+        <div className="container mx-auto p-2 lg:w-4/5 lg:mx-auto">
+            <h1 className="font-bold my-4 lg:ml-60">Minhas viagens</h1>
+            <div className="lg:flex lg:flex-wrap lg:gap-2 lg:w-4/6	lg:mx-auto justify-between">
             {
                 MyTrips.map((item: TripReservation) =>
-                    <div className="my-4 shadow-xl p-4 rounded-xl bg-gray-100">
+                    <div className="my-4 shadow-xl p-4 rounded-xl bg-gray-100 lg:w-[320px]">
                         <div className="flex w-full items-center">
                             <img src={item.picture} alt="Hotel picture" className="w-[110px] h-[110px] object-cover rounded-lg"></img>
                             <div className="ml-4">
@@ -72,6 +74,7 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
                     </div>
                     )
             }
+            </div>
         </div>
     );
 }

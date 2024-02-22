@@ -37,8 +37,9 @@ export default function ReservarButton(props:purchasedTrip) {
     }
     return (
         <><Link href={`/`}>
-            <button className="bg-primary w-[100%] p-2 my-10 rounded-xl text-white font-semibold hover:bg-primaryHover mb-40" onClick={logReservation}>Finalizar compra</button>
+            <button className="bg-primary w-[100%] p-2 my-10 rounded-xl text-white font-semibold mb-40 border-2 hover:border-2 hover:bg-white hover:text-primary duration-200 hover:border-purple-600" onClick={logReservation}>Finalizar compra</button>
             </Link>
         </>
     )
 }
+
