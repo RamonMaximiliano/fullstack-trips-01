@@ -42,6 +42,10 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
           console.log({id}) 
           return NextResponse.json(request) 
 }
+
+
+Also check:
+https://www.mozzlog.com/blog/delete-request-api-route-nextjs
          
 */  
 
