@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import {NextResponse} from "next/server";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export async function GET(){
     const reservs = await prisma.tripReservation.findMany();
@@ -33,6 +34,7 @@ export async function POST(request: Request){
         { status: 201 }
       );
     }
+
 
 
 /*

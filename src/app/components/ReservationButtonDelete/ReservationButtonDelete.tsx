@@ -1,14 +1,17 @@
 "use client"
 import React from "react";
+import { useRouter } from "next/navigation";
+
 type reservedTrip = {
     id: string,
 }
 export default function ReservarButtonDelete(props:reservedTrip) {
-    console.log(props)
+        const router = useRouter()
         async function deleteReservation(){
-        const res = await fetch(`http://localhost:3000/apitripreser?id=${props.id}`,{
+        await fetch(`http://localhost:3000/apitripreser/${props.id}`,{
             method:"DELETE",
-       });   
+       })
+       router.refresh()   
     }
     return (
         <>
@@ -19,12 +22,9 @@ export default function ReservarButtonDelete(props:reservedTrip) {
 
 
 /* 
-https://github.com/felipemotarocha/fullstackweek-trips/blob/main/src/app/my-trips/components/UserReservationItem.tsx 
 
-  const handleDeleteClick = async () => {
-    const res = await fetch(`/api/trips/reservation/${reservation.id}`, {
-      method: "DELETE",
-    });
-
+Da um refresh na pagina cada vez que clica no botão
+import { useRouter } from "next/navigation";
+router.refresh()   
 
 */

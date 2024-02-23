@@ -30,23 +30,15 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
 /*
 
 https://github.com/felipemotarocha/fullstackweek-trips
-https://www.linkedin.com/posts/pedroh-dev_bom-dia-galera-passando-para-compartilhar-activity-7084494958925144064-m5EG/?trk=public_profile_like_view
-
 
 
 -----------------------------------------------------------------------------
-https://www.mozzlog.com/blog/delete-request-api-route-nextjs
-
-PAGINA MINHAS VIAGENS:
-- Opção de deletar viagem do banco quando estiver vendo "ver minhas viagens"
 
 MENSAGEM COMPRA SUCCESSFULL:
 
 DELETAR: SEARCH NA PAGINA INICIAL:
 
 COLOCAR O QUICK SEARCH DENTRO DO RECOMMENDED TRIPS E FILTRAR CONFORME OS BOTÕES
-
-
 
 
 */
