@@ -24,8 +24,6 @@ export default async function RecommendedTrips() {
  */
 
 const data:any = await getTrips();
-
-
   return (
     <>
       <div className="container flex justify-between items-center p-2 m-auto lg:w-3/4 lg:px-8">

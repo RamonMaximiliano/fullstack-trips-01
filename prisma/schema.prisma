@@ -26,6 +26,7 @@ model Trip {
   reservations TripReservation[]
   countryCode  String
   recommended  Boolean           @default(false)
+  hoteltype    Int           @default(0)
 }
 
 //Uma reserva só pode ser de uma trip
