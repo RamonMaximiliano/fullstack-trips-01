@@ -36,9 +36,16 @@ https://github.com/felipemotarocha/fullstackweek-trips
 
 MENSAGEM COMPRA SUCCESSFULL:
 
-DELETAR: SEARCH NA PAGINA INICIAL:
+DELETAR: SEARCH NA PAGINA INICIAL: Colocar outra frase exemplo:
+
+"Bem vindo ao Bon Voyage, seu melhor agente de viagens!
+Encontre sua proóxima viagem!"
+
 
 COLOCAR O QUICK SEARCH DENTRO DO RECOMMENDED TRIPS E FILTRAR CONFORME OS BOTÕES
+* Não precisa colocar um dentro do outro pra filtrar
+
+
 
 
 */
