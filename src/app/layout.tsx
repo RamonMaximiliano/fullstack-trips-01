@@ -18,7 +18,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     <html lang="en">
       <body className={poppins.className}>
         <NextAuthProvider>
-        <Header /> 
+          <Header />
           {children}
           <Footer />
         </NextAuthProvider>
@@ -34,17 +34,13 @@ https://github.com/felipemotarocha/fullstackweek-trips
 
 -----------------------------------------------------------------------------
 
-MENSAGEM COMPRA SUCCESSFULL:
+MENSAGEM COMPRA SUCCESSFULL
 
-DELETAR: SEARCH NA PAGINA INICIAL: Colocar outra frase exemplo:
+MENSAGEM DELETE TRIP SUCCESSFULL
 
-"Bem vindo ao Bon Voyage, seu melhor agente de viagens!
-Encontre sua proóxima viagem!"
+AJUSTAR FOOTER DISTANCE
 
-
-COLOCAR O QUICK SEARCH DENTRO DO RECOMMENDED TRIPS E FILTRAR CONFORME OS BOTÕES
-* Não precisa colocar um dentro do outro pra filtrar
-
+USER LOGGED IN GET TRIPS RESERVATION, MAKE OF THE USER LOGGED, CURRENTLY IS HARD CODED THE USER ID
 
 
 
