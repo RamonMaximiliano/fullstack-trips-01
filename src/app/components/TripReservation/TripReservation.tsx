@@ -31,7 +31,6 @@ export default function TripReservation(props: TripItemsProps & { startDate: str
             setInicFin(false)
         }
         const tripData:string = `${String(maxTotal)}p${String(data.startdate)}p${String(data.enddate)}p${String(data.guests)}p${String(props.trip.id)}`
-        console.log(tripData)
         router.push(`/FinishP/${tripData}`)
     }
     const startDateString = initialDate;

@@ -76,7 +76,7 @@ export default async function TripDetails({ params }: { params: { tripid: string
 
                 <div className="hidden lg:grid grid-cols-[2fr,1fr,1fr] gap-2 grid-rows-2 lg:order-2 w-11/12 mx-auto">
                     <div className="relative row-span-2 shadow-2xl">
-                        <img src={String(tripDetails?.coverImage)} alt="foto" className="object-cover h-full rounded-tl-lg rounded-bl-lg shadow-xl"/>
+                        <img src={String(tripDetails?.coverImage)} alt="foto" className="object-cover h-full rounded-tl-lg rounded-bl-lg shadow-xl" />
                     </div>
                     <div className="relative w-full shadow-2xl">
                         <img src={String(tripDetails?.imagesUrl[1])} alt="foto" className="object-cover h-full shadow-2xl" />
@@ -114,7 +114,6 @@ export default async function TripDetails({ params }: { params: { tripid: string
             <div className="leading-7 mx-auto w-11/12 my-6 text-gray-500">
                 <h2 className="font-bold">Localização</h2>
                 <p className="text-sm ml-2">{tripDetails?.location}</p>
-                <button className="w-full rounded-lg p-2 text-primary bg-white border-primary border-2 my-4">Ver no Google Maps</button>
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ export default function TripItem(props: TripItemsProps) {
       {/* 
 O trip detail component virou uma rota, portanto ao clicar neste TripItem, vai direcionar para aquela rota conforma o ID que ele receber
 */}
-      <div className="text-gray-500 container mx-auto my-2 lg:w-5/6">
+      <div className="text-gray-500 container mx-auto my-2 lg:w-5/6 hover:scale-105 duration-200 hover:shadow-xl rounded-lg p-2 hover:bg-gray-100">
         <img src={props.trip.coverImage} className="rounded-lg h-60 w-72" alt="foto" />
         <div className="leading-6">
           <h1 className="font-bold">{props.trip.name}</h1>

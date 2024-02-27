@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaHotel } from "react-icons/fa";
 import { MdLocalHotel } from "react-icons/md";
 import { FaHouseUser } from "react-icons/fa";
@@ -8,10 +8,19 @@ import { FaBookOpen } from "react-icons/fa";
 import { Trip } from "@prisma/client";
 import TripItem from "../TripItem/TripItem";
 
-export default async function QuickRecommended() {
+export default function QuickRecommended() {
     const [filter, setFilter] = useState(0)
-    const tripsData = await fetch("http://localhost:3000/apicon").then((data) => { return data.json() })
-    let tripsFiltered = []
+    const [tripsData, setTripsData] = useState([]);
+
+    useEffect(()=>{
+        const fetchData = async () => {
+            const data = await fetch("http://localhost:3000/apicon").then((res) => res.json());
+            setTripsData(data);
+        };
+        fetchData();
+    }, []);
+
+    let tripsFiltered: Array<Trip> = []
     if (filter == 1) {
         tripsFiltered = tripsData.filter((item: Trip) => {
             return item.hoteltype == 1
@@ -50,23 +59,23 @@ export default async function QuickRecommended() {
                     <div className="bg-gray-500 w-full h-[2px]"></div>
                 </div>
                 <div className="container flex justify-between flex-wrap mx-1 my-4 text-gray-500">
-                    <div className="items-center text-center flex flex-col hover:shadow-xl	rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(0) }}>
+                    <div className="items-center text-center flex flex-col hover:shadow-xl hover:bg-gray-100 rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(0) }}>
                     <FaBookOpen />
                         <p className="text-sm">Todos</p>
                     </div>
-                    <div className="items-center text-center flex flex-col hover:shadow-xl	rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(1) }}>
+                    <div className="items-center text-center flex flex-col hover:shadow-xl hover:bg-gray-100 rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(1) }}>
                         <FaHotel />
                         <p className="text-sm">Resorts</p>
                     </div>
-                    <div className="items-center text-center flex flex-col hover:shadow-xl	rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(2) }}>
+                    <div className="items-center text-center flex flex-col hover:shadow-xl hover:bg-gray-100 rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(2) }}>
                         <FaHouseUser />
                         <p className="text-sm">Chalés</p>
                     </div>
-                    <div className="items-center text-center flex flex-col hover:shadow-xl	rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(3) }}>
+                    <div className="items-center text-center flex flex-col hover:shadow-xl hover:bg-gray-100 rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(3) }}>
                         <MdLocalHotel />
                         <p className="text-sm">Pousadas</p>
                     </div>
-                    <div className="items-center text-center flex flex-col hover:shadow-xl	rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(4) }}>
+                    <div className="items-center text-center flex flex-col hover:shadow-xl hover:bg-gray-100 rounded-full w-[100px] h-[60px] cursor-pointer pt-3 duration-200 hover:text-gray-800" onClick={() => { setFilter(4) }}>
                         <FaWarehouse />
                         <p className="text-sm">Fazendas</p>
                     </div>

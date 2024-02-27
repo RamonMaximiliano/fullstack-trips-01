@@ -26,7 +26,7 @@ export default function Header() {
     return (
         <div className="container mx-auto p-5 flex justify-between py-0 h-[93px] items-center lg:w-3/4">
              <Link href={`/`}>
-            <div className="logo-name h-[32px] w-[182px] items-center">
+            <div className="logo-name h-[50px] w-[190px] items-center duration-200">
                 <GiCommercialAirplane style={{ color: '#590BD8' }} className="logo-name-airplane" />
                 <h2 className="text-primary font-semibold">BonVoyage</h2>
             </div>
@@ -36,7 +36,7 @@ export default function Header() {
                 <button className="text-primary text-sm font-semibold" onClick={handleLoginClick}>Login</button>
             )}
             {status === "authenticated" && data.user && (
-                <div className="flex items-center gap-3 border-grayPrimary border border-solid rounded-full p-2 px-3 cursor-pointer relative w-[100px] shadow-xl">
+                <div className="flex items-center gap-3 border-grayPrimary border border-solid rounded-full p-2 px-3 cursor-pointer relative w-[100px] shadow-xl hover:bg-gray-100 duration-200">
                     <AiOutlineMenu size={16} onClick={handleMenuClick} />
                     <Image width={35} height={35} src={data.user.image!} alt={data.user.name!} className="rounded-full shadow-md" />
                 

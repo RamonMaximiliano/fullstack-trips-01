@@ -15,7 +15,6 @@ type purchasedTrip = {
   }
 
 export default function ReservarButton(props:purchasedTrip) {
-    console.log(props)
     async function logReservation(){
         const response = await fetch("http://localhost:3000/apitripreser",{
             method:"POST",
