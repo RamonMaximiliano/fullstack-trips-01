@@ -26,8 +26,17 @@ async function getTripData(tripId: string) {
   }
 }
 
+async function getUsers() {
+  const users = await prisma.user.findMany().finally(() => {
+      prisma.$disconnect();
+  });
+  if (users) {
+      return users;
+  }
+}
 
 export default async function FinishPurchase({ params }: { params: { FinishP: string } }) {
+  const users: any = await getUsers();
   const purchaseitem = params.FinishP.split("p")
   const purchasedTrip: purchasedTrip = {
     id: String(purchaseitem[4]),
@@ -72,6 +81,7 @@ export default async function FinishPurchase({ params }: { params: { FinishP: st
         </div>
         <ReservarButton   id={purchasedTrip.id} price={purchasedTrip.price} startdate={purchasedTrip.startdate} enddate={purchasedTrip.enddate} guests={purchasedTrip.guests} 
         picture={String(tripDataTaken?.imagesUrl)} hotel={String(tripDataTaken?.name)} country={String(tripDataTaken?.countryCode)} location={String(tripDataTaken?.location)}
+        users={users}
         />
       </div>
     </>

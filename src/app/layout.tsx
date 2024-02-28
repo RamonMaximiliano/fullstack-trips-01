@@ -31,7 +31,6 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
 
 https://github.com/felipemotarocha/fullstackweek-trips
 
-
 -----------------------------------------------------------------------------
 
 MENSAGEM COMPRA SUCCESSFULL
@@ -39,9 +38,6 @@ MENSAGEM COMPRA SUCCESSFULL
 MENSAGEM DELETE TRIP SUCCESSFULL
 
 AJUSTAR FOOTER DISTANCE
-
-USER LOGGED IN GET TRIPS RESERVATION, MAKE OF THE USER LOGGED, CURRENTLY IS HARD CODED THE USER ID
-
 
 
 */

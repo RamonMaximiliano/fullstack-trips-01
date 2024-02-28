@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react"
 
 type purchasedTrip = {
     id: string,
@@ -11,10 +12,16 @@ type purchasedTrip = {
     picture:string,
     hotel:string,
     country:string,
-    location:string
+    location:string,
+    users: any
   }
 
 export default function ReservarButton(props:purchasedTrip) {
+    const { data: session, status } = useSession()
+    const loggedID = props.users.find((user:any)=>{
+        return user.email == session?.user?.email
+    })
+
     async function logReservation(){
         const response = await fetch("http://localhost:3000/apitripreser",{
             method:"POST",
@@ -23,7 +30,7 @@ export default function ReservarButton(props:purchasedTrip) {
                     tripId: props.id,
                     start: props.startdate,
                     end: props.enddate,
-                    userId: "clrb0oo360000lmto7tcj2cxo",
+                    userId: loggedID.id,
                     totalPaid: props.price,
                     guests:props.guests,
                     picture:props.picture,
