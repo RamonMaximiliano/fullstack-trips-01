@@ -25,6 +25,9 @@ export default function TripReservation(props: TripItemsProps & { startDate: str
     const { trip, startDate, endDate } = props;
 
     const onSubmit = (data: any) => {
+        if(data.guests > trip.maxGuests){
+            window.alert(`O número de hóspedes deve ser inferior ao máximo permitido: ${trip.maxGuests}. Por favor, escolha um número menor.`);
+        } else {
         if (data.startdate > data.enddate) {
             setInicFin(true)
         } else {
@@ -32,6 +35,7 @@ export default function TripReservation(props: TripItemsProps & { startDate: str
         }
         const tripData:string = `${String(maxTotal)}p${String(data.startdate)}p${String(data.enddate)}p${String(data.guests)}p${String(props.trip.id)}`
         router.push(`/FinishP/${tripData}`)
+    }
     }
     const startDateString = initialDate;
     const startDateObject = new Date(startDateString);
@@ -83,7 +87,7 @@ export default function TripReservation(props: TripItemsProps & { startDate: str
                         message: "N° de hóspedes obrigatório!",
                     },
                 })}
-                placeholder={`Numero de hospedes (max:${trip.maxGuests || 'N/A'})`} className="p-2 rounded-lg w-full border-2 border-gray-300 mt-1" type="number" min="1" max="5" onChange={(e) => setTripTotalGuests(Number(e.target.value))}></input>
+                placeholder={`Numero de hospedes (max:${trip.maxGuests || 'N/A'})`} className="p-2 rounded-lg w-full border-2 border-gray-300 mt-1" type="number" min="1" max={trip.maxGuests} onChange={(e) => setTripTotalGuests(Number(e.target.value))}></input>
             {errors.guests && <p className="text-red-500 text-sm">{errors?.guests?.message}</p>}
             <div className="flex font-bold w-full justify-between text-gray-500 my-2 mt-3">
                 <p>Total:</p>
