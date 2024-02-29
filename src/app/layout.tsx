@@ -33,12 +33,6 @@ https://github.com/felipemotarocha/fullstackweek-trips
 
 -----------------------------------------------------------------------------
 
-MENSAGEM COMPRA SUCCESSFULL
-
-MENSAGEM DELETE TRIP SUCCESSFULL
-
 AJUSTAR FOOTER DISTANCE
-
-
 
 */
