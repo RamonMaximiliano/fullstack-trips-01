@@ -6,10 +6,12 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
     const { status, data } = useSession();
     const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+    const router = useRouter()
 
     const handleLoginClick = () => { signIn() }
     const handleLoginOut = () => {
@@ -20,12 +22,13 @@ export default function Header() {
 
     function hideMenu(){
         setMenuIsOpen(false)
+        router.refresh()
     }
 
     const handleMenuClick = () => { setMenuIsOpen(!menuIsOpen) }
     return (
         <div className="container mx-auto p-5 flex justify-between py-0 h-[93px] items-center lg:w-3/4">
-             <Link href={`/`}>
+             <Link href={`/`} onClick={()=>hideMenu()}>
             <div className="logo-name h-[50px] w-[190px] items-center duration-200">
                 <GiCommercialAirplane style={{ color: '#590BD8' }} className="logo-name-airplane" />
                 <h2 className="text-primary font-semibold">BonVoyage</h2>

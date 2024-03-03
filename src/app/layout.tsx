@@ -26,13 +26,3 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     </html>
   )
 }
-
-/*
-
-https://github.com/felipemotarocha/fullstackweek-trips
-
------------------------------------------------------------------------------
-
-AJUSTAR FOOTER DISTANCE
-
-*/

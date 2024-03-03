@@ -35,7 +35,8 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
     })
     return (
         
-        <div className="container mx-auto p-2 lg:w-4/5 lg:mx-auto">
+        <div className="container mx-auto p-2 lg:w-4/5 lg:mx-auto flex flex-col min-h-screen">
+            <main className="flex-grow">
             <h1 className="font-bold my-4 lg:ml-60">Minhas viagens</h1>
             <div className="lg:flex lg:flex-wrap lg:gap-2 lg:w-4/6	lg:mx-auto justify-between">
             {
@@ -75,6 +76,7 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
                     )
             }
             </div>
+            </main>
         </div>
     );
 }
