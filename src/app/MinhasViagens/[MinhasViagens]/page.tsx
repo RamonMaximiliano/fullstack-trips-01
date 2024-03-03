@@ -39,6 +39,7 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
             <main className="flex-grow">
             <h1 className="font-bold my-4 lg:ml-60">Minhas viagens</h1>
             <div className="lg:flex lg:flex-wrap lg:gap-2 lg:w-4/6	lg:mx-auto justify-between">
+                {MyTrips.length <= 0 && <h2>Você não tem nenhuma viagem reservada, ou aguarde o sistema ser atualizado.<br/> Volte em alguns minutos!</h2>}
             {
                 MyTrips.map((item: TripReservation) =>
                     <div className="my-4 shadow-xl p-4 rounded-xl bg-gray-100 lg:w-[320px]">
