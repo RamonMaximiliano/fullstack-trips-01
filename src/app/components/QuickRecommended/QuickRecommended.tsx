@@ -14,7 +14,7 @@ export default function QuickRecommended() {
 
     useEffect(()=>{
         const fetchData = async () => {
-            const data = await fetch("http://localhost:3000/apicon").then((res) => res.json());
+            const data = await fetch("/apicon").then((res) => res.json());
             setTripsData(data);
         };
         fetchData();
@@ -95,3 +95,10 @@ export default function QuickRecommended() {
         </>
     );
 }
+
+
+/*
+
+            const data = await fetch("http://localhost:3000/apicon").then((res) => res.json());
+
+*/

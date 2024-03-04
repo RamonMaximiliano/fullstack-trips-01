@@ -19,7 +19,7 @@ export default function ReservarButtonDelete(props: reservedTrip) {
         if(status != 'authenticated'){
             window.alert("Por favor logar no sistema para gerenciar suas viagens!")
         } else {
-        await fetch(`http://localhost:3000/apitripreser/${props.id}`, {
+        await fetch(`/apitripreser/${props.id}`, {
             method: "DELETE",
         })
         setSuccess(true);
@@ -50,5 +50,9 @@ export default function ReservarButtonDelete(props: reservedTrip) {
 Da um refresh na pagina cada vez que clica no botão
 import { useRouter } from "next/navigation";
 router.refresh()   
+
+
+
+       await fetch(`http://localhost:3000/apitripreser/${props.id}`, {
 
 */

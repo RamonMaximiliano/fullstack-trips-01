@@ -27,7 +27,7 @@ export default function ReservarButton(props: purchasedTrip) {
     })
 
     async function logReservation() {
-        const response = await fetch("http://localhost:3000/apitripreser", {
+        const response = await fetch("/apitripreser", {
             method: "POST",
             body: Buffer.from(
                 JSON.stringify({
@@ -66,3 +66,8 @@ export default function ReservarButton(props: purchasedTrip) {
     )
 }
 
+
+
+/*
+    const response = await fetch("http://localhost:3000/apitripreser", {
+*/
