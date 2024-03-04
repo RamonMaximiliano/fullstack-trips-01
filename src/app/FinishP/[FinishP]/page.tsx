@@ -55,7 +55,7 @@ export default async function FinishPurchase({ params }: { params: { FinishP: st
         <h2 className="font-bold text-lg">Sua viagem</h2>
           <div className="w-full shadow-xl rounded-lg p-3">
             <div className="flex  items-center">
-              <img src={tripDataTaken?.imagesUrl} alt="Trip photo" className="h-[100px] w-[100px] object-cover rounded-lg" />
+              <img src={String(tripDataTaken?.imagesUrl)} alt="Trip photo" className="h-[100px] w-[100px] object-cover rounded-lg" />
               <div className="ml-4">
                 <p className="font-bold text-lg">{tripDataTaken?.name}</p>
                 <p className="text-xs">{tripDataTaken?.countryCode} {tripDataTaken?.location}</p>
