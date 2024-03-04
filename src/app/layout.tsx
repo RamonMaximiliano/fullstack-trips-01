@@ -27,16 +27,3 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   )
 }
 
-
-
-/*
-
-Security!
-
-Com a URL outro user esta conseguindo deletar e adicionar viagens
-
-
-VERIFICAR! 
-
-
-*/

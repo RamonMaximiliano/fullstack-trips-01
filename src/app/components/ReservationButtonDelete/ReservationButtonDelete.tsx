@@ -2,15 +2,23 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { MdOutlineCancel } from "react-icons/md";
+import { useSession } from "next-auth/react"
 
 
 type reservedTrip = {
     id: string,
 }
 export default function ReservarButtonDelete(props: reservedTrip) {
+    const { data: session, status } = useSession()
     const [success, setSuccess] = useState(false)
     const router = useRouter()
+    console.log(status)
+
+
     async function deleteReservation() {
+        if(status != 'authenticated'){
+            window.alert("Por favor logar no sistema para gerenciar suas viagens!")
+        } else {
         await fetch(`http://localhost:3000/apitripreser/${props.id}`, {
             method: "DELETE",
         })
@@ -19,6 +27,7 @@ export default function ReservarButtonDelete(props: reservedTrip) {
             router.refresh()
             setSuccess(false);
         }, 3000);
+    }
     }
     return (
         <>
