@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fullstack Trips
 
-## Getting Started
+## Next JS - Next auth - Google Authentication - Back end - Taiwind - Bando de dados
+  
+## Português:
 
-First, run the development server:
+Meu primeiro projeto Fullstack!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Usando Next JS, consegui fazer meu primeiro App com back end, criando, consultando e utilizando métodos de API como: GET, POST, e DELETE 
+- Também utilizei tailwind para estilizar o App
+- Foi necessário também criar o banco de dados, tabelas e regaras do banco 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Link para projeto:
+https://fullstack-trips-01.vercel.app
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## English:
 
-## Learn More
+My first Fullstack project!
 
-To learn more about Next.js, take a look at the following resources:
+- Using Next.js, I managed to build my first app with a backend, creating, querying, and utilizing API methods such as GET, POST, and DELETE.
+- I also used Tailwind CSS to style the app.
+- It was also necessary to create the database, tables, and database rules.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Link to the project:
+https://fullstack-trips-01.vercel.app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![My Image](finished.png)
