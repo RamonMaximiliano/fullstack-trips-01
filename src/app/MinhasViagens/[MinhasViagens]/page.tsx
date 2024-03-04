@@ -71,7 +71,7 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
                                 <p className="text-sm">Total:</p>
                                 <p className="font-bold text-sm">R$ {Number(item.totalPaid)}</p>
                             </div>
-                            <ReservarButtonDelete   id={item.id}/>
+                            <ReservarButtonDelete   id={item.id} key={item.id}/>
                         </div>
                     </div>
                     )
