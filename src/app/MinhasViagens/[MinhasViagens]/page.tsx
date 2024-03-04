@@ -42,7 +42,7 @@ export default async function MinhasViagens({ params }: { params: { MinhasViagen
                 {MyTrips.length <= 0 && <h2>Você não tem nenhuma viagem reservada, ou aguarde o sistema ser atualizado.<br/> Volte em alguns minutos!</h2>}
             {
                 MyTrips.map((item: TripReservation) =>
-                    <div className="my-4 shadow-xl p-4 rounded-xl bg-gray-100 lg:w-[320px]">
+                    <div className="my-4 shadow-xl p-4 rounded-xl bg-gray-100 lg:w-[320px]" key={item.id}>
                         <div className="flex w-full items-center">
                             <img src={item.picture} alt="Hotel picture" className="w-[110px] h-[110px] object-cover rounded-lg"></img>
                             <div className="ml-4">
