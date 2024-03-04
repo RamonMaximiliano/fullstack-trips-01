@@ -1,6 +1,6 @@
 # Fullstack Trips
 
-## Next JS - Next auth - Google Authentication - Back end - Taiwind - Banco de dados
+## Next JS - Next auth - Google Authentication - Back end - Tailwind - Banco de dados
   
 ## Português:
 
@@ -8,7 +8,7 @@ Meu primeiro projeto Fullstack!
 
 - Usando Next JS, consegui fazer meu primeiro App com back end, criando, consultando e utilizando métodos de API como: GET, POST, e DELETE 
 - Também utilizei tailwind para estilizar o App
-- Foi necessário também criar o banco de dados, tabelas e regaras do banco 
+- Foi necessário também criar o banco de dados, tabelas e regras do banco 
 
 
 Link para projeto:
