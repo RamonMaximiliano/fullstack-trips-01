@@ -1,6 +1,6 @@
 # Fullstack Trips
 
-## Next JS - Next auth - Google Authentication - Back end - Taiwind - Bando de dados
+## Next JS - Next auth - Google Authentication - Back end - Taiwind - Banco de dados
   
 ## Português:
 
