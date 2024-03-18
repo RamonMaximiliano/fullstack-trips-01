@@ -43,7 +43,7 @@ export default async function FinishPurchase({ params }: { params: { FinishP: st
     price: Number(purchaseitem[0]),
     startdate: String(purchaseitem[1]),
     enddate: String(purchaseitem[2]),
-    guests: Number(purchaseitem[3]),
+    guests: Math.ceil(Number(purchaseitem[3])),
   }
   const tripDataTaken = await getTripData(purchasedTrip.id);
 
